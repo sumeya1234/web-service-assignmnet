@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://example.com/myservice"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             name="MyService"
+             targetNamespace="http://example.com/myservice">
+
+  <types>
+    <xsd:schema targetNamespace="http://example.com/myservice">
+
+      <xsd:element name="sayHelloRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="sayHelloResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="greeting" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="addNumbersRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="num1" type="xsd:int"/>
+            <xsd:element name="num2" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="addNumbersResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sum" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+     
+      <xsd:element name="getStudentNameRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="studentId" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+      <xsd:element name="getStudentNameResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="studentName" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+
+    </xsd:schema>
+  </types>
+
+  <message name="SayHelloRequest"><part name="parameters" element="tns:sayHelloRequest"/></message>
+  <message name="SayHelloResponse"><part name="parameters" element="tns:sayHelloResponse"/></message>
+
+  <message name="AddNumbersRequest"><part name="parameters" element="tns:addNumbersRequest"/></message>
+  <message name="AddNumbersResponse"><part name="parameters" element="tns:addNumbersResponse"/></message>
+
+  <message name="GetStudentNameRequest"><part name="parameters" element="tns:getStudentNameRequest"/></message>
+  <message name="GetStudentNameResponse"><part name="parameters" element="tns:getStudentNameResponse"/></message>
+
+  <portType name="MyServicePortType">
+    <operation name="sayHello">
+      <input message="tns:SayHelloRequest"/>
+      <output message="tns:SayHelloResponse"/>
+    </operation>
+    <operation name="addNumbers">
+      <input message="tns:AddNumbersRequest"/>
+      <output message="tns:AddNumbersResponse"/>
+    </operation>
+    <operation name="getStudentName">
+      <input message="tns:GetStudentNameRequest"/>
+      <output message="tns:GetStudentNameResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="MyServiceBinding" type="tns:MyServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="sayHello">
+      <soap:operation soapAction="sayHello"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+    <operation name="addNumbers">
+      <soap:operation soapAction="addNumbers"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+    <operation name="getStudentName">
+      <soap:operation soapAction="getStudentName"/>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+    </operation>
+  </binding>
+
+  <service name="MyService">
+    <port name="MyServicePort" binding="tns:MyServiceBinding">
+      <soap:address location="http://localhost:8000/wsdl"/>
+    </port>
+  </service>
+</definitions>
