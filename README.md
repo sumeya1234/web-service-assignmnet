@@ -44,6 +44,10 @@ It includes three main parts:
 - All CRUD endpoints worked successfully and returned valid JSON responses.  
 - Spring Boot handled routing and JSON conversion automatically.  
 - API tested successfully via Postman.
+![Figure 1: Spring Boot Controller Example](assets/images/assignment1_code2.png) 
+![Figure 2: Spring Boot Controller Example](assets/images/assignment1_code1.png)  
+*Figure 1: Product controller implementation using Java.*
+
 
 ---
 
@@ -65,6 +69,9 @@ It includes three main parts:
 ### Outcome
 - Validated API workflows and responses.  
 - Learned how to debug and manage RESTful APIs efficiently using Postman.
+![Figure 3: Postman Request Creation](assets/images/assignment2_delete1.png)  
+![Figure 4: Postman Request Creation](assets/images/assignment2_delete2.png)  
+*Figure 3: Creating and sending GET, POST, PUT, and DELETE requests in Postman.*
 
 ---
 
@@ -115,3 +122,7 @@ It includes three main parts:
 </soap:Envelope>
 
 ```
+![Figure 5: Node.js SOAP Server Setup](assets/images/assignment3_code.png)  
+*Figure 6: Setting up the SOAP server using Express and the `soap` library.*
+![Figure 8: SOAP Request and Response](assets/images/assignment3_test.png)  
+*Figure 8: Example SOAP request and XML response displayed in Postman.*
