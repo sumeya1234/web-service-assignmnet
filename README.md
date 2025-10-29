@@ -126,3 +126,10 @@ It includes three main parts:
 *Figure 6: Setting up the SOAP server using Express and the `soap` library.*
 ![Figure 8: SOAP Request and Response](assets/images/assignment3_test.png)  
 *Figure 8: Example SOAP request and XML response displayed in Postman.*
+
+---
+
+## Conclusion
+
+The project provided valuable practical experience in building and testing RESTful and SOAP-based web services.
+Working with Spring Boot, Postman, and Node.js helped deepen understanding of how APIs communicate, how WSDL defines SOAP operations, and how these technologies work together to enable reliable client–server interaction.
